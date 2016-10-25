@@ -1,0 +1,234 @@
+Started GET "/" for 127.0.0.1 at 2016-10-25 08:02:11 +0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (4245.5ms)
+  Rendered layouts/_rails_default.html.erb (105.6ms)
+  Rendered layouts/_shim.html.erb (0.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (40.3ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 4491ms (Views: 4455.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-10-25 08:02:20 +0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (627.9ms)
+  Rendered layouts/_rails_default.html.erb (32.7ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 841ms (Views: 677.0ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2016-10-25 08:02:27 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eCmYHbrgvafoTdeCTCXK//dLGvrlmq019frNQz3wVeoJqqkf9S5tE+oKZ5uTfvzFQY/UIoQ5P672MiTMORZhCQ==", "session"=>{"email"=>"anh@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "anh@gmail.com"], ["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_rails_default.html.erb (27.2ms)
+  Rendered layouts/_shim.html.erb (0.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 123ms (Views: 38.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2016-10-25 08:02:37 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"abNqfs1Inxzb2Nrc2mHBiH2iDdrkBlk9Wb8AEtqZHce03+LaEb6ZxfzCBabkI1FdsummmlEe3endeh0WWT5nnQ==", "session"=>{"email"=>"anh@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "anh@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "users" SET "remember_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_digest", "$2a$10$fru0e06SS3.GSGBBMiZBNeNMGQWAhhwLUgIUR7GFscgg/sN6V.2O."], ["updated_at", 2016-10-25 01:02:37 UTC], ["id", 1]]
+  [1m[35m (69.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 243ms (ActiveRecord: 70.6ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2016-10-25 08:02:38 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_rails_default.html.erb (26.8ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (1.8ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 39ms (Views: 36.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-25 08:03:45 +0700
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_rails_default.html.erb (51.5ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 67ms (Views: 63.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-25 09:36:01 +0700
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_rails_default.html.erb (120.4ms)
+  Rendered layouts/_shim.html.erb (0.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (13.1ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 146ms (Views: 143.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-10-25 09:36:07 +0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_rails_default.html.erb (33.8ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (1.4ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 47ms (Views: 45.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-10-25 09:38:31 +0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered collection of users/_user.html.erb [30 times] (97.2ms)
+  Rendered users/index.html.erb within layouts/application (103.1ms)
+Completed 500 Internal Server Error in 110ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `current_user?' for #<#<Class:0x007f5fbf827820>:0x007f5fbf8261f0>
+Did you mean?  current_user
+               current_page?):
+    1: <li>
+    2:   <%= gravatar_for user, size: 50 %>
+    3:   <%= link_to user.name, user %>
+    4:   <% if current_user.admin? && !current_user?(user) %>
+    5: 
+    6:     | <%= link_to "delete", user, method: :delete,
+    7:         data: {confirm: "You sure?"} %>
+  
+app/views/users/_user.html.erb:4:in `_app_views_users__user_html_erb__741146105073809696_70024605401540'
+app/views/users/index.html.erb:8:in `block in _app_views_users_index_html_erb__2186375112288657160_70024605811020'
+app/views/users/index.html.erb:7:in `_app_views_users_index_html_erb__2186375112288657160_70024605811020'
+  Rendering /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.4ms)
+  Rendering /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendering /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (24.5ms)
+DEPRECATION WARNING: #original_exception is deprecated. Use #cause instead. (called from status_code_with_paginate at /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/will_paginate-3.1.0/lib/will_paginate/railtie.rb:49)
+Started GET "/users" for 127.0.0.1 at 2016-10-25 10:13:40 +0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered collection of users/_user.html.erb [30 times] (5.8ms)
+  Rendered collection of users/_user.html.erb [30 times] (5.8ms)
+  Rendered collection of users/_user.html.erb [30 times] (5.7ms)
+  Rendered collection of users/_user.html.erb [30 times] (4.7ms)
+  Rendered collection of users/_user.html.erb [30 times] (5.3ms)
+  Rendered collection of users/_user.html.erb [30 times] (5.1ms)
+  Rendered collection of users/_user.html.erb [30 times] (4.8ms)
+  Rendered collection of users/_user.html.erb [30 times] (7.4ms)
+  Rendered collection of users/_user.html.erb [30 times] (5.0ms)
+  Rendered collection of users/_user.html.erb [30 times] (4.9ms)
+  Rendered collection of users/_user.html.erb [30 times] (6.0ms)
+  Rendered collection of users/_user.html.erb [30 times] (5.4ms)
+  Rendered collection of users/_user.html.erb [30 times] (5.9ms)
+  Rendered collection of users/_user.html.erb [30 times] (6.0ms)
+  Rendered collection of users/_user.html.erb [30 times] (4.9ms)
+  Rendered collection of users/_user.html.erb [30 times] (5.0ms)
+  Rendered collection of users/_user.html.erb [30 times] (4.8ms)
+  Rendered collection of users/_user.html.erb [30 times] (5.8ms)
+  Rendered collection of users/_user.html.erb [30 times] (5.5ms)
+  Rendered collection of users/_user.html.erb [30 times] (5.2ms)
+  Rendered collection of users/_user.html.erb [30 times] (8.3ms)
+  Rendered collection of users/_user.html.erb [30 times] (4.8ms)
+  Rendered collection of users/_user.html.erb [30 times] (5.6ms)
+  Rendered collection of users/_user.html.erb [30 times] (6.4ms)
+  Rendered collection of users/_user.html.erb [30 times] (5.0ms)
+  Rendered collection of users/_user.html.erb [30 times] (6.2ms)
+  Rendered collection of users/_user.html.erb [30 times] (4.9ms)
+  Rendered collection of users/_user.html.erb [30 times] (5.2ms)
+  Rendered collection of users/_user.html.erb [30 times] (6.9ms)
+  Rendered collection of users/_user.html.erb [30 times] (4.8ms)
+  Rendered users/index.html.erb within layouts/application (196.3ms)
+  Rendered layouts/_rails_default.html.erb (28.3ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 242ms (Views: 230.6ms | ActiveRecord: 1.2ms)
+
+
+Started DELETE "/users/2" for 127.0.0.1 at 2016-10-25 10:17:38 +0700
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"pnI6VMJPiCqdoNeC9Kf6X/85FhuDFYj0UdxMNTWdE6t7HrLwHrmO87q6CPjK5WqKMHK9WzYNDCDVGVExtjpp8Q==", "id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  [1m[35m (153.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 161ms (ActiveRecord: 154.7ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-10-25 10:17:38 +0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered collection of users/_user.html.erb [30 times] (6.1ms)
+  Rendered collection of users/_user.html.erb [30 times] (6.4ms)
+  Rendered collection of users/_user.html.erb [30 times] (4.9ms)
+  Rendered collection of users/_user.html.erb [30 times] (9.0ms)
+  Rendered collection of users/_user.html.erb [30 times] (5.6ms)
+  Rendered collection of users/_user.html.erb [30 times] (6.8ms)
+  Rendered collection of users/_user.html.erb [30 times] (5.2ms)
+  Rendered collection of users/_user.html.erb [30 times] (4.9ms)
+  Rendered collection of users/_user.html.erb [30 times] (7.7ms)
+  Rendered collection of users/_user.html.erb [30 times] (6.8ms)
+  Rendered collection of users/_user.html.erb [30 times] (7.1ms)
+  Rendered collection of users/_user.html.erb [30 times] (5.5ms)
+  Rendered collection of users/_user.html.erb [30 times] (14.4ms)
+  Rendered collection of users/_user.html.erb [30 times] (4.8ms)
+  Rendered collection of users/_user.html.erb [30 times] (6.3ms)
+  Rendered collection of users/_user.html.erb [30 times] (4.9ms)
+  Rendered collection of users/_user.html.erb [30 times] (5.4ms)
+  Rendered collection of users/_user.html.erb [30 times] (6.7ms)
+  Rendered collection of users/_user.html.erb [30 times] (4.9ms)
+  Rendered collection of users/_user.html.erb [30 times] (4.9ms)
+  Rendered collection of users/_user.html.erb [30 times] (5.0ms)
+  Rendered collection of users/_user.html.erb [30 times] (6.4ms)
+  Rendered collection of users/_user.html.erb [30 times] (5.3ms)
+  Rendered collection of users/_user.html.erb [30 times] (5.2ms)
+  Rendered collection of users/_user.html.erb [30 times] (5.1ms)
+  Rendered collection of users/_user.html.erb [30 times] (4.8ms)
+  Rendered collection of users/_user.html.erb [30 times] (6.4ms)
+  Rendered collection of users/_user.html.erb [30 times] (5.5ms)
+  Rendered collection of users/_user.html.erb [30 times] (4.8ms)
+  Rendered collection of users/_user.html.erb [30 times] (6.6ms)
+  Rendered users/index.html.erb within layouts/application (208.5ms)
+  Rendered layouts/_rails_default.html.erb (26.9ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 243ms (Views: 240.9ms | ActiveRecord: 0.6ms)
+
+
