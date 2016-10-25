@@ -232,3 +232,1158 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 243ms (Views: 240.9ms | ActiveRecord: 0.6ms)
 
 
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddActivationToUsers (20161025032535)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "users" ADD "activation_digest" varchar[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "activated" boolean DEFAULT 'f'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "activated_at" datetime[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161025032535"]]
+  [1m[35m (54.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[35m (92.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (95.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20161018113317)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161018113317"]]
+  [1m[35m (91.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddIndexToUsersEmail (20161018123907)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161018123907"]]
+  [1m[35m (55.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddPasswordDigestToUsers (20161018124045)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.3ms)[0m  [1m[35mALTER TABLE "users" ADD "password_digest" varchar[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161018124045"]]
+  [1m[35m (95.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddRememberDigestToUsers (20161024063501)
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.3ms)[0m  [1m[35mALTER TABLE "users" ADD "remember_digest" varchar[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161024063501"]]
+  [1m[35m (67.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddAdminToUsers (20161024161931)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.3ms)[0m  [1m[35mALTER TABLE "users" ADD "admin" boolean[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161024161931"]]
+  [1m[35m (70.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddActivationToUsers (20161025032535)
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.5ms)[0m  [1m[35mALTER TABLE "users" ADD "activation_digest" varchar[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "users" ADD "activated" boolean DEFAULT 'f'[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "users" ADD "activated_at" datetime[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161025032535"]]
+  [1m[35m (93.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2016-10-25 03:46:22 UTC], ["updated_at", 2016-10-25 03:46:22 UTC]]
+  [1m[35m (59.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Anh"], ["email", "anh@gmail.com"], ["created_at", 2016-10-25 03:46:32 UTC], ["updated_at", 2016-10-25 03:46:32 UTC], ["password_digest", "$2a$10$5UTD6/eP8y2XXwExYvzbSeVlZ5JrHW1oOrKzMuB.9tRoXbdhYHn9K"], ["admin", true], ["activation_digest", "$2a$10$Q6Ahpo.qx4QOc75HyVc85u5eysZrldgtkeCwoMJnOnDOg.VY/ZdTK"], ["activated", true], ["activated_at", 2016-10-25 03:46:32 UTC]]
+  [1m[35m (87.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-1@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Domenico Koelpin"], ["email", "anh-1@gmail.com"], ["created_at", 2016-10-25 03:46:33 UTC], ["updated_at", 2016-10-25 03:46:33 UTC], ["password_digest", "$2a$10$w5zXoBeTWocZ2navbcUr7O9aCVMMaYIB5jbXgnL.7oBbjBWZIVjTu"], ["activation_digest", "$2a$10$l6Pu1aCJzIktMNsSN/3YsukfPjckPAp1ELSWF2VrCDeFRBQMDWEYu"], ["activated", true], ["activated_at", 2016-10-25 03:46:33 UTC]]
+  [1m[35m (90.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-2@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Breanne Kuvalis"], ["email", "anh-2@gmail.com"], ["created_at", 2016-10-25 03:46:33 UTC], ["updated_at", 2016-10-25 03:46:33 UTC], ["password_digest", "$2a$10$n8Np4.S3c8oRNVXaZxzdpOrdsPaZzq4POfPEUXKEEvPYG1D4grCz2"], ["activation_digest", "$2a$10$k.joHf/TmXdLQPZmE9aqNunkr1ayaSctb2EdBZEXOKZK56ApGPW0C"], ["activated", true], ["activated_at", 2016-10-25 03:46:33 UTC]]
+  [1m[35m (86.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-3@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Lisette Funk"], ["email", "anh-3@gmail.com"], ["created_at", 2016-10-25 03:46:33 UTC], ["updated_at", 2016-10-25 03:46:33 UTC], ["password_digest", "$2a$10$FlmAyxBHE/HFw4QE.8vk6OPEVcNUsJcjTH.wwXvI6uJ5j5k43/PXe"], ["activation_digest", "$2a$10$yn6VTFxIcpMyJa2NwUy3Guvv9XWaXZKGUVeQBI90lQe6P4fME9x52"], ["activated", true], ["activated_at", 2016-10-25 03:46:33 UTC]]
+  [1m[35m (86.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-4@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Herman Wiegand"], ["email", "anh-4@gmail.com"], ["created_at", 2016-10-25 03:46:34 UTC], ["updated_at", 2016-10-25 03:46:34 UTC], ["password_digest", "$2a$10$4TzKlU9aq6z8ypRf2Ntr1OsuYPhQ8r1Y1629UTIJ/SqD6njRNCt.a"], ["activation_digest", "$2a$10$0NOftwB4ELRXXeCq7K8DXun/VVkS9L0FBiJ4AvlcE3lpIDBMCZ0lO"], ["activated", true], ["activated_at", 2016-10-25 03:46:33 UTC]]
+  [1m[35m (96.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-5@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Theodora Deckow Jr."], ["email", "anh-5@gmail.com"], ["created_at", 2016-10-25 03:46:34 UTC], ["updated_at", 2016-10-25 03:46:34 UTC], ["password_digest", "$2a$10$JqYm88MTuNlXcz7Qj3J7rOD9T/3Wh0rQJdPKwR6JVqGwky9KCKE0G"], ["activation_digest", "$2a$10$rQw6SWf3K7KtjlMFe8ThgOBc68VY4I2l2nZFAqbSAe8c/zwkqhkYW"], ["activated", true], ["activated_at", 2016-10-25 03:46:34 UTC]]
+  [1m[35m (75.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-6@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Polly VonRueden"], ["email", "anh-6@gmail.com"], ["created_at", 2016-10-25 03:46:34 UTC], ["updated_at", 2016-10-25 03:46:34 UTC], ["password_digest", "$2a$10$1ixwA1kttxuekGUy5yqsz.WIBSJvI2CLmpP4F0YF7duQ5pP87m1uS"], ["activation_digest", "$2a$10$goItJHCoteLkJR4aOxu.xOUxekwRPhmm7V1dxdpMvSFVxzx8U6r8K"], ["activated", true], ["activated_at", 2016-10-25 03:46:34 UTC]]
+  [1m[35m (84.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-7@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Elmer Boyer"], ["email", "anh-7@gmail.com"], ["created_at", 2016-10-25 03:46:34 UTC], ["updated_at", 2016-10-25 03:46:34 UTC], ["password_digest", "$2a$10$40fZHHs/ehdID2pDnU.Jqu7rXsvH9/GONRB50iDciwVTzZY1zRL9a"], ["activation_digest", "$2a$10$eu5TPGZY6UndyH.x3iKFcO6m0Ia53hREFRv6j8XHS0GCh2rIdZZDa"], ["activated", true], ["activated_at", 2016-10-25 03:46:34 UTC]]
+  [1m[35m (73.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-8@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Christelle Kemmer V"], ["email", "anh-8@gmail.com"], ["created_at", 2016-10-25 03:46:35 UTC], ["updated_at", 2016-10-25 03:46:35 UTC], ["password_digest", "$2a$10$2CYEZfruxgfOfjMEAQ3A9u0AbxlFOFydJzc.C2YYSF5f0gg3ah8O6"], ["activation_digest", "$2a$10$9x.I/b2sJw2bnFa12FZDMuAzma.99NXaDPUV69uIyZD3mGs2pW9OO"], ["activated", true], ["activated_at", 2016-10-25 03:46:35 UTC]]
+  [1m[35m (117.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-9@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Ms. Berry Pagac"], ["email", "anh-9@gmail.com"], ["created_at", 2016-10-25 03:46:35 UTC], ["updated_at", 2016-10-25 03:46:35 UTC], ["password_digest", "$2a$10$uldxtevAkTYf.DP8z2ulgO9l1OBwV3GuoOg73oBszkvH5H7Dn2kje"], ["activation_digest", "$2a$10$ieKKhzKckGQZTxR7FWTUjO3RBepfoi8hEA7oQUIDdWJNDPcsorzki"], ["activated", true], ["activated_at", 2016-10-25 03:46:35 UTC]]
+  [1m[35m (70.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-10@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Yvette Gottlieb II"], ["email", "anh-10@gmail.com"], ["created_at", 2016-10-25 03:46:35 UTC], ["updated_at", 2016-10-25 03:46:35 UTC], ["password_digest", "$2a$10$cs5G6f7DlEzMjFinSQzXyepjhdTzKHO9dHMpAvKuTdzvMAVH4cq/K"], ["activation_digest", "$2a$10$gLnfFD8A8bXqCGdR83N8AOXP37hOfbGHj9JGUkguEQW5/qrYpwmfO"], ["activated", true], ["activated_at", 2016-10-25 03:46:35 UTC]]
+  [1m[35m (89.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-11@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Nicolas Pagac"], ["email", "anh-11@gmail.com"], ["created_at", 2016-10-25 03:46:35 UTC], ["updated_at", 2016-10-25 03:46:35 UTC], ["password_digest", "$2a$10$UpxNd3w9eKQ5NfYEzDGZi.tyUctc8Z8yeyiAmxmim2VE1HuyCdlOa"], ["activation_digest", "$2a$10$PPrJOgr2C0D8ZtvMs7/qWuODI6SWDeUvPIqXwnUcPV5MbZIQbUwq2"], ["activated", true], ["activated_at", 2016-10-25 03:46:35 UTC]]
+  [1m[35m (142.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-12@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Sabina Bosco"], ["email", "anh-12@gmail.com"], ["created_at", 2016-10-25 03:46:36 UTC], ["updated_at", 2016-10-25 03:46:36 UTC], ["password_digest", "$2a$10$/uqtSn114JiWikkT7wcLdeGIOjWZJwpTA1SKVVYUldhhW6YNaO39a"], ["activation_digest", "$2a$10$uJlmJpu68WGB3eDPCP8TO.ZjqKVCFwxVMYXP4aW16z3.Vlbuykj4K"], ["activated", true], ["activated_at", 2016-10-25 03:46:36 UTC]]
+  [1m[35m (114.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-13@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Dr. Jadon Considine"], ["email", "anh-13@gmail.com"], ["created_at", 2016-10-25 03:46:36 UTC], ["updated_at", 2016-10-25 03:46:36 UTC], ["password_digest", "$2a$10$Rs/0zuwPzb/XFGUEjTkB6ue4V9kaELjpn6/wW4sryU/qifJdtwpVe"], ["activation_digest", "$2a$10$tA8.O29jA7LkdXBohR/kfuajjO64N.SIPUf2tr7O23TghwP8zkuq."], ["activated", true], ["activated_at", 2016-10-25 03:46:36 UTC]]
+  [1m[35m (86.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-14@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Kolby Wintheiser"], ["email", "anh-14@gmail.com"], ["created_at", 2016-10-25 03:46:36 UTC], ["updated_at", 2016-10-25 03:46:36 UTC], ["password_digest", "$2a$10$kEcsitw247XqYCM9piGCVO15GtBrJoZPmhjQU.8TDMwcQyl3VLbX."], ["activation_digest", "$2a$10$hMaR/a0ORJ/WNAFhev3nYe7l0HUFLi5eHd.Qz7KEWgW02VehfF7.e"], ["activated", true], ["activated_at", 2016-10-25 03:46:36 UTC]]
+  [1m[35m (90.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-15@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Yessenia Gislason"], ["email", "anh-15@gmail.com"], ["created_at", 2016-10-25 03:46:37 UTC], ["updated_at", 2016-10-25 03:46:37 UTC], ["password_digest", "$2a$10$Xf7iuYebXQ9tdcRUQCJ0AOf76jE8fTPyo48iAYmADhIvUs/DrdMzO"], ["activation_digest", "$2a$10$JctzL6.uaROJZ1ra0ZBFe.AgHn1DpPOejbwPJFYikSozU7lXE9XS."], ["activated", true], ["activated_at", 2016-10-25 03:46:37 UTC]]
+  [1m[35m (79.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-16@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Dolly Wisozk Sr."], ["email", "anh-16@gmail.com"], ["created_at", 2016-10-25 03:46:37 UTC], ["updated_at", 2016-10-25 03:46:37 UTC], ["password_digest", "$2a$10$FbaYFGfzqkAUqV3lUjXqROAWyuV0DkHV32OfcZ/LSFbWIBVwnAW/2"], ["activation_digest", "$2a$10$KkmqEfpDE/0xKFylHi7hw.Toc8SKWNa./mCsI59.h5EVVX/k3gaky"], ["activated", true], ["activated_at", 2016-10-25 03:46:37 UTC]]
+  [1m[35m (104.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-17@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Albina DuBuque"], ["email", "anh-17@gmail.com"], ["created_at", 2016-10-25 03:46:37 UTC], ["updated_at", 2016-10-25 03:46:37 UTC], ["password_digest", "$2a$10$AFQvUwKBoZCa.VlBSvKH2uzjCcucrf2LgxjQ.AMZh8RdNOwLzeXOy"], ["activation_digest", "$2a$10$aAQX/ij3TWjDBV9Z1edW6esd1HBJu9rZsVg3hfM8PcV1WLPmQ/uYW"], ["activated", true], ["activated_at", 2016-10-25 03:46:37 UTC]]
+  [1m[35m (85.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-18@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Forest Walsh"], ["email", "anh-18@gmail.com"], ["created_at", 2016-10-25 03:46:38 UTC], ["updated_at", 2016-10-25 03:46:38 UTC], ["password_digest", "$2a$10$a6vWylJuZ03JzK.CzkT1e.HFrHjap2uCcx0iBKJ0UzRm1WHkKhefC"], ["activation_digest", "$2a$10$oDPU9PVRxZ/Mkma8Dvf4QuPqB/mSzXwN7LjNcGRBNcaIgKcYOM7fG"], ["activated", true], ["activated_at", 2016-10-25 03:46:37 UTC]]
+  [1m[35m (80.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-19@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Gerda Dicki"], ["email", "anh-19@gmail.com"], ["created_at", 2016-10-25 03:46:38 UTC], ["updated_at", 2016-10-25 03:46:38 UTC], ["password_digest", "$2a$10$lKk9As8d4la54TREgum/v.ZZ5Arm20etTrYzyJShn3S8p7ZDfNLiu"], ["activation_digest", "$2a$10$9kDXDdXKpbIWFjz1Pf8mZeito.Glw.UxnJXx5eimxKK3ekEyz8wxK"], ["activated", true], ["activated_at", 2016-10-25 03:46:38 UTC]]
+  [1m[35m (73.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-20@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Emelie Veum"], ["email", "anh-20@gmail.com"], ["created_at", 2016-10-25 03:46:38 UTC], ["updated_at", 2016-10-25 03:46:38 UTC], ["password_digest", "$2a$10$3RPVN6tgYpvgn44u/IcQlezH6EwWNumsRD3fFaAcpeQC21NAChkmW"], ["activation_digest", "$2a$10$mzwcsLncK4JIYXEQt6MX9OkiO6RhmmKQXln7k5VfIOxiH64sUfKnG"], ["activated", true], ["activated_at", 2016-10-25 03:46:38 UTC]]
+  [1m[35m (98.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-21@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Alberto Carroll II"], ["email", "anh-21@gmail.com"], ["created_at", 2016-10-25 03:46:38 UTC], ["updated_at", 2016-10-25 03:46:38 UTC], ["password_digest", "$2a$10$X13cwQvHSGZdF7qu37wv0eoG.3OJwnDgW61CUAX9qPdbJGgpLAhCC"], ["activation_digest", "$2a$10$rEJtkwuydMc4fZj8ejUUlOF/.U4UCkHGjZ5YUOEpgLqjUICktveEG"], ["activated", true], ["activated_at", 2016-10-25 03:46:38 UTC]]
+  [1m[35m (82.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-22@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Mr. Pauline Christiansen"], ["email", "anh-22@gmail.com"], ["created_at", 2016-10-25 03:46:39 UTC], ["updated_at", 2016-10-25 03:46:39 UTC], ["password_digest", "$2a$10$nNBToz7rGRDyQaMIzdEl/uB3DNWfaYSeO637sCTWaZTuGituPr3YW"], ["activation_digest", "$2a$10$l3zbw0OpYc9QyUlCs2Z5tOYIurzHTSUlIAgPpQhA8BmffrkxD62iG"], ["activated", true], ["activated_at", 2016-10-25 03:46:38 UTC]]
+  [1m[35m (81.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-23@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Miss Mozelle Fadel"], ["email", "anh-23@gmail.com"], ["created_at", 2016-10-25 03:46:39 UTC], ["updated_at", 2016-10-25 03:46:39 UTC], ["password_digest", "$2a$10$uV7duFuGhU7EYn2NmZFO6uQPFqcN7nb2bc4wd3RFU57BkMo3RT42q"], ["activation_digest", "$2a$10$A.8qxKGKd9efuMzdB1IGTe8dbMc6tcQ509NM4FF8IaiXkMQjjYmFW"], ["activated", true], ["activated_at", 2016-10-25 03:46:39 UTC]]
+  [1m[35m (85.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-24@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Shaun Bergnaum"], ["email", "anh-24@gmail.com"], ["created_at", 2016-10-25 03:46:39 UTC], ["updated_at", 2016-10-25 03:46:39 UTC], ["password_digest", "$2a$10$v4x3XL6nQwDycmsaDV8TMOA6RISlDlZvBiM8/dzFgOz4UdHt2aMF6"], ["activation_digest", "$2a$10$EyCGHKpcGtaS8n4.0oJaMeiTW67h1K6HfXtJJM3NEA8NOCSlJZ/Em"], ["activated", true], ["activated_at", 2016-10-25 03:46:39 UTC]]
+  [1m[35m (103.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-25@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Sven Davis"], ["email", "anh-25@gmail.com"], ["created_at", 2016-10-25 03:46:39 UTC], ["updated_at", 2016-10-25 03:46:39 UTC], ["password_digest", "$2a$10$WNIxpAsoQAuGWhw0Toup9.QoN0t2NV.djCWKD94n0rKuGr8jIgkU."], ["activation_digest", "$2a$10$vOFtncfBtbfTxT6pHSxuxuBg/46SwwmlIEt7dpHa9oIT8TcZTq6Bi"], ["activated", true], ["activated_at", 2016-10-25 03:46:39 UTC]]
+  [1m[35m (72.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-26@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Ms. Daisy MacGyver"], ["email", "anh-26@gmail.com"], ["created_at", 2016-10-25 03:46:40 UTC], ["updated_at", 2016-10-25 03:46:40 UTC], ["password_digest", "$2a$10$1xwafIR09euh9fbeFsZPYeEPCNTYEF9aWuBbfq/SBhtPNHdEd0JQm"], ["activation_digest", "$2a$10$.QE2wFZY51cjQLCHWmpV0.M09mhBqXX34.09cDHAH0vxSIf208OCy"], ["activated", true], ["activated_at", 2016-10-25 03:46:40 UTC]]
+  [1m[35m (100.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-27@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Violette Ledner"], ["email", "anh-27@gmail.com"], ["created_at", 2016-10-25 03:46:40 UTC], ["updated_at", 2016-10-25 03:46:40 UTC], ["password_digest", "$2a$10$Y2EP.6Cm2OHg3kYgwhQ0VuYRKC1pMpAyu.QEYCgMzc4R7ZCjERDoW"], ["activation_digest", "$2a$10$ozBD2rjwEMzdJvHoeQpWFedEh0AbPQFa.nSUFDtN5xgApgD8ti7Ou"], ["activated", true], ["activated_at", 2016-10-25 03:46:40 UTC]]
+  [1m[35m (93.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-28@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Roy Cronin"], ["email", "anh-28@gmail.com"], ["created_at", 2016-10-25 03:46:40 UTC], ["updated_at", 2016-10-25 03:46:40 UTC], ["password_digest", "$2a$10$N9/I0j7DK230q4R2lnJJKemWCe7Cin0Q7TC6bm4zUAnMhR/sCuO4C"], ["activation_digest", "$2a$10$Re.bS3ixgVvW24wykAK5rOuImp4czQODqsK2pk.mxFeOV1a281AjK"], ["activated", true], ["activated_at", 2016-10-25 03:46:40 UTC]]
+  [1m[35m (112.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-29@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Miss Tiana Steuber"], ["email", "anh-29@gmail.com"], ["created_at", 2016-10-25 03:46:41 UTC], ["updated_at", 2016-10-25 03:46:41 UTC], ["password_digest", "$2a$10$Vj0gR77cnY5RuFTyRcSs8O.835V3bB39gFnE/hbZaBXI2tvxzVbie"], ["activation_digest", "$2a$10$v3y/KNDxVRWOsbG37qr4D.yHIh24MtQ400t5WyLA.YSOmBgi472UW"], ["activated", true], ["activated_at", 2016-10-25 03:46:40 UTC]]
+  [1m[35m (97.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-30@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Marlene Tromp"], ["email", "anh-30@gmail.com"], ["created_at", 2016-10-25 03:46:41 UTC], ["updated_at", 2016-10-25 03:46:41 UTC], ["password_digest", "$2a$10$Wa3tl7xiaIjBnmovac2KzuKJikOVbzeCqF7mfaNSfAp9kXoG2pNQq"], ["activation_digest", "$2a$10$hsZcCY6OFgVzC5C6LMxWx.DTFK4ABXo6Blk8fzsy2l7.xW5Av6BJO"], ["activated", true], ["activated_at", 2016-10-25 03:46:41 UTC]]
+  [1m[35m (104.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-31@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Nikolas O'Kon"], ["email", "anh-31@gmail.com"], ["created_at", 2016-10-25 03:46:41 UTC], ["updated_at", 2016-10-25 03:46:41 UTC], ["password_digest", "$2a$10$8s9UOeUXh6SvBkk9DxdUkOPKQcibuiqs2W3xjLc0ZkWg.2QRfY7Zu"], ["activation_digest", "$2a$10$sUfyxTKGGAWG5ARblnHCHuwtFstTlSOWTpZD8Q5tWamAKJQtSezbe"], ["activated", true], ["activated_at", 2016-10-25 03:46:41 UTC]]
+  [1m[35m (84.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-32@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Mr. Marion Toy"], ["email", "anh-32@gmail.com"], ["created_at", 2016-10-25 03:46:41 UTC], ["updated_at", 2016-10-25 03:46:41 UTC], ["password_digest", "$2a$10$7LTXzKgUexfCWEf2b4tJq.pjo8fPFBbD9yj2FFxRs9Ka66PeC4l/u"], ["activation_digest", "$2a$10$Fi9V.O/nY7vj51m6z276S.srb/LvxGen3KOLCBAXEo8k4InVYPsQu"], ["activated", true], ["activated_at", 2016-10-25 03:46:41 UTC]]
+  [1m[35m (116.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-33@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Montana Collier"], ["email", "anh-33@gmail.com"], ["created_at", 2016-10-25 03:46:42 UTC], ["updated_at", 2016-10-25 03:46:42 UTC], ["password_digest", "$2a$10$LzTlYv.Ux2vaxHFyYgxnMOq5Ohn7HXqrtohD/PxIOfAa7HWUP6lqi"], ["activation_digest", "$2a$10$4lpnbj69UCL2oCUDj5UapO3McacIlGxPKC72yX0K53SLsVuniDvuy"], ["activated", true], ["activated_at", 2016-10-25 03:46:42 UTC]]
+  [1m[35m (80.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-34@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Mr. Nicholaus Stroman"], ["email", "anh-34@gmail.com"], ["created_at", 2016-10-25 03:46:42 UTC], ["updated_at", 2016-10-25 03:46:42 UTC], ["password_digest", "$2a$10$GYMe9biFZSJTxrNtIkiUUOa3Vb4a3GW9.e7xrGOQ8smirq7t9TNSe"], ["activation_digest", "$2a$10$5S39v1mEyIfopWhDDqN3zeyEZs8skff3jihxG1Kr.V50A5J21FnFy"], ["activated", true], ["activated_at", 2016-10-25 03:46:42 UTC]]
+  [1m[35m (85.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-35@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Palma Ryan IV"], ["email", "anh-35@gmail.com"], ["created_at", 2016-10-25 03:46:42 UTC], ["updated_at", 2016-10-25 03:46:42 UTC], ["password_digest", "$2a$10$Ru9ERmV7DAkaJ.mixCorpunfOU.ElhBc6ypzhTXyeHqW.CL3rghKa"], ["activation_digest", "$2a$10$x2GrvrCCNYBfNNBk026DEe3jhq3Tva/CkTAC3KdBuZKt6KmLrPYI6"], ["activated", true], ["activated_at", 2016-10-25 03:46:42 UTC]]
+  [1m[35m (81.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-36@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Darren Rath"], ["email", "anh-36@gmail.com"], ["created_at", 2016-10-25 03:46:43 UTC], ["updated_at", 2016-10-25 03:46:43 UTC], ["password_digest", "$2a$10$gS8dfEU1ppBYeJvtjYngiuP5U7J8Fqj2fl16lcgpG0RK7OegNvRT2"], ["activation_digest", "$2a$10$fL6aMvrXoGWCmKHulkTYxuT0GCp5kkYQRmPLjbfwvHd570oH2j7n2"], ["activated", true], ["activated_at", 2016-10-25 03:46:42 UTC]]
+  [1m[35m (111.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-37@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Esta Nicolas"], ["email", "anh-37@gmail.com"], ["created_at", 2016-10-25 03:46:43 UTC], ["updated_at", 2016-10-25 03:46:43 UTC], ["password_digest", "$2a$10$zI2h8//PT1LkJEEqyqLF8.7C.s8oby/PN7xRnvvyJh94DZcUzuB/6"], ["activation_digest", "$2a$10$WcMtoYiHhEGWQ/9KJM2ZTeq.LBdyCk2sPD2EVqkb/m0wZ.2h2.Nfi"], ["activated", true], ["activated_at", 2016-10-25 03:46:43 UTC]]
+  [1m[35m (88.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-38@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Mrs. Blanca Roob"], ["email", "anh-38@gmail.com"], ["created_at", 2016-10-25 03:46:43 UTC], ["updated_at", 2016-10-25 03:46:43 UTC], ["password_digest", "$2a$10$W1AXBi0EqkGE4J5yfkDsqeUQBa2/1X9flAI3dkTC3r7rnHezW1vhW"], ["activation_digest", "$2a$10$4yyPYv3cnqp/DgmP.LWRY..362oVwgs75VBxv27wq4WxJpnUS0lQO"], ["activated", true], ["activated_at", 2016-10-25 03:46:43 UTC]]
+  [1m[35m (94.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-39@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Rocio Heidenreich"], ["email", "anh-39@gmail.com"], ["created_at", 2016-10-25 03:46:43 UTC], ["updated_at", 2016-10-25 03:46:43 UTC], ["password_digest", "$2a$10$YgghCkmfiNCkoXQXoh26Ge0YoR8Pwv3qPB.RiO.HGkInj/0OgVNwa"], ["activation_digest", "$2a$10$wEwRoED0G.zFnUlHQjFSaOuQqHqjoDn9WjgBLBcZukGc8pHQPiAfe"], ["activated", true], ["activated_at", 2016-10-25 03:46:43 UTC]]
+  [1m[35m (93.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-40@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Kendrick Jacobson I"], ["email", "anh-40@gmail.com"], ["created_at", 2016-10-25 03:46:44 UTC], ["updated_at", 2016-10-25 03:46:44 UTC], ["password_digest", "$2a$10$PZIHBt6umt7kmmhGG4vhCeZuXTLOaRUT8UIVYBsMqeabHlp0TZ8/."], ["activation_digest", "$2a$10$1A//gjYrfCrzZKsW7mbpreG5F9jSb6r7Sg3eqzY7qMZysyVqoBufa"], ["activated", true], ["activated_at", 2016-10-25 03:46:44 UTC]]
+  [1m[35m (284.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-41@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Dejah Smith"], ["email", "anh-41@gmail.com"], ["created_at", 2016-10-25 03:46:44 UTC], ["updated_at", 2016-10-25 03:46:44 UTC], ["password_digest", "$2a$10$A1.CVhuz1qCprNFGmK0bCOOly3cSm.fyWMskp1uqylNEwRUuV07N."], ["activation_digest", "$2a$10$PDuOFOE9ulJu0bEQyTpfZ.3Y5lpoyPad2U3W/OMf6pWJr1zhqzjee"], ["activated", true], ["activated_at", 2016-10-25 03:46:44 UTC]]
+  [1m[35m (75.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-42@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Alvis O'Conner"], ["email", "anh-42@gmail.com"], ["created_at", 2016-10-25 03:46:44 UTC], ["updated_at", 2016-10-25 03:46:44 UTC], ["password_digest", "$2a$10$CZbcTLowZoV1VEBB67x2h.kVBnC28TwiuvQ5dx1lNqwk5RwogQbNa"], ["activation_digest", "$2a$10$142rf/tE2jjBkYegPZpJkehb8hRE1Vi7RsGiolebD0klWZzRfzHE6"], ["activated", true], ["activated_at", 2016-10-25 03:46:44 UTC]]
+  [1m[35m (95.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-43@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Marquis Bailey"], ["email", "anh-43@gmail.com"], ["created_at", 2016-10-25 03:46:45 UTC], ["updated_at", 2016-10-25 03:46:45 UTC], ["password_digest", "$2a$10$ucNal3rRfPSCCtXeK.7gIetqui2wnvC46/T5Z0ahs2fWjYGajH3wW"], ["activation_digest", "$2a$10$Khx7EdleXE4YLYM5NKzqMOWDiBGRjhn2YPQwr.2vd05noOEdwqFWC"], ["activated", true], ["activated_at", 2016-10-25 03:46:45 UTC]]
+  [1m[35m (96.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-44@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Hadley Lehner"], ["email", "anh-44@gmail.com"], ["created_at", 2016-10-25 03:46:45 UTC], ["updated_at", 2016-10-25 03:46:45 UTC], ["password_digest", "$2a$10$xUOh6UjniRTxN2Z6Q1gil.PcHEZuCYA3J0x33y87ouFne4f0AY7G2"], ["activation_digest", "$2a$10$UyAdm5Hm33uXmbheNqCciu2AB4j78zVdNlJ5AIBnLvi3Dt2YeY4nO"], ["activated", true], ["activated_at", 2016-10-25 03:46:45 UTC]]
+  [1m[35m (86.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-45@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Eliseo Schuster"], ["email", "anh-45@gmail.com"], ["created_at", 2016-10-25 03:46:45 UTC], ["updated_at", 2016-10-25 03:46:45 UTC], ["password_digest", "$2a$10$q0G7v7cMMlBzMw9PanMQcuvW4w1LaKVc7Peig4OLJ/E1Mtluy8gg6"], ["activation_digest", "$2a$10$BZ8kaQkVcf51G3WtH..tE.O5egpm3ga7eyP19H1B3fmH3bv5PJUJ6"], ["activated", true], ["activated_at", 2016-10-25 03:46:45 UTC]]
+  [1m[35m (76.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-46@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Tressie Gutkowski"], ["email", "anh-46@gmail.com"], ["created_at", 2016-10-25 03:46:46 UTC], ["updated_at", 2016-10-25 03:46:46 UTC], ["password_digest", "$2a$10$/JcgQCx0VAgDhstHEk4yQ.FtlH3BbXbCPwDZY5.ZxEbnwQxP9t7va"], ["activation_digest", "$2a$10$Amqk7I6UL2zOKB0.ve.ZuOVGwM301XIPjB0h1azJj3NqA2suP07BG"], ["activated", true], ["activated_at", 2016-10-25 03:46:45 UTC]]
+  [1m[35m (110.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-47@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Miss Ulises Sanford"], ["email", "anh-47@gmail.com"], ["created_at", 2016-10-25 03:46:46 UTC], ["updated_at", 2016-10-25 03:46:46 UTC], ["password_digest", "$2a$10$nf7BJdxCq0AC3Xs6dGVRIO19rJrMYaiD6Owby.xrODDwuzLy2XyEa"], ["activation_digest", "$2a$10$R/qXdpx9ZTtc.A/6cBMTtOhzcBySDUmwYAIhKb0jhbhE5WvzcypQG"], ["activated", true], ["activated_at", 2016-10-25 03:46:46 UTC]]
+  [1m[35m (83.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-48@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Joanne Hand V"], ["email", "anh-48@gmail.com"], ["created_at", 2016-10-25 03:46:46 UTC], ["updated_at", 2016-10-25 03:46:46 UTC], ["password_digest", "$2a$10$6w3C3t1FDbc8KtYsSVPjI./EL3VLPiMz/bC9YAnMowGJ23SVQuzQq"], ["activation_digest", "$2a$10$0sfB4SA8rlq/VLdPEVqauO9uTEvUP9MCiAfq03c8MzLI8KenU4n6a"], ["activated", true], ["activated_at", 2016-10-25 03:46:46 UTC]]
+  [1m[35m (113.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-49@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Talon Wolf"], ["email", "anh-49@gmail.com"], ["created_at", 2016-10-25 03:46:46 UTC], ["updated_at", 2016-10-25 03:46:46 UTC], ["password_digest", "$2a$10$SPgOrG69sle.2DVohh5/z.DRAfQoa9UYl25yMw3H3PL5zqNapTpqe"], ["activation_digest", "$2a$10$MQ6UF9EK6q..zNOg20V5s.1oVUz0A3TU.CMSkqu3cn4oqljqigR4e"], ["activated", true], ["activated_at", 2016-10-25 03:46:46 UTC]]
+  [1m[35m (89.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-50@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Miss Marlin Jerde"], ["email", "anh-50@gmail.com"], ["created_at", 2016-10-25 03:46:47 UTC], ["updated_at", 2016-10-25 03:46:47 UTC], ["password_digest", "$2a$10$8G7h4hCb0C/39TnXGrWKZOZlvlSJ3QL97LhH7CpOA4Ocr2rdcNfH6"], ["activation_digest", "$2a$10$cSIJOCfWQJmZbYUjiqrZnOO9ZzzxrN9LsSjuoAeNenV65Yl6KfEBW"], ["activated", true], ["activated_at", 2016-10-25 03:46:47 UTC]]
+  [1m[35m (97.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-51@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Floy Barrows"], ["email", "anh-51@gmail.com"], ["created_at", 2016-10-25 03:46:47 UTC], ["updated_at", 2016-10-25 03:46:47 UTC], ["password_digest", "$2a$10$krjCPctFQr56HyaJI0TBHuhha.WicKYyu.QtZW/D.NruZTAvEP83O"], ["activation_digest", "$2a$10$RMIbdxzstXY5fXHCp4O3XuOYCtcTDxFzdRhfnQltD5wNI/tnXuNPu"], ["activated", true], ["activated_at", 2016-10-25 03:46:47 UTC]]
+  [1m[35m (80.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-52@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Elyssa Parisian DVM"], ["email", "anh-52@gmail.com"], ["created_at", 2016-10-25 03:46:47 UTC], ["updated_at", 2016-10-25 03:46:47 UTC], ["password_digest", "$2a$10$J7Oaf/ZJAmw5GAwAvddZguvS3Y1L0kW9uvR5ZRV/luI.5on6dYFE6"], ["activation_digest", "$2a$10$S5dpNNXFRzY08Pb4ZxN4V.9CVGZO0mFdhcUUBt.36jCY8yXP7jUBW"], ["activated", true], ["activated_at", 2016-10-25 03:46:47 UTC]]
+  [1m[35m (105.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-53@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Dr. Sanford Beer"], ["email", "anh-53@gmail.com"], ["created_at", 2016-10-25 03:46:48 UTC], ["updated_at", 2016-10-25 03:46:48 UTC], ["password_digest", "$2a$10$NDB6oQnoBygcRvp1lLOf..LAy0yImQKU2VyzlbbfIiVNa0.yOoV92"], ["activation_digest", "$2a$10$rdv/95PNfAZ9yQy.gVV1nuG6wYYZIedGzTxrXteGg71z53q8zASua"], ["activated", true], ["activated_at", 2016-10-25 03:46:47 UTC]]
+  [1m[35m (89.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-54@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Modesto Leffler I"], ["email", "anh-54@gmail.com"], ["created_at", 2016-10-25 03:46:48 UTC], ["updated_at", 2016-10-25 03:46:48 UTC], ["password_digest", "$2a$10$Qt39cxUDFLxyH9IqrmaZMO/HYP4Hm.rmvvqMnH2fhWsgD2bruIIA."], ["activation_digest", "$2a$10$WXkWYOj3jHx6o0w05BcJy.TsZGiqZrtZdZM1/flMDIHd1HxXsftMy"], ["activated", true], ["activated_at", 2016-10-25 03:46:48 UTC]]
+  [1m[35m (96.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-55@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Nels Wisozk"], ["email", "anh-55@gmail.com"], ["created_at", 2016-10-25 03:46:48 UTC], ["updated_at", 2016-10-25 03:46:48 UTC], ["password_digest", "$2a$10$OXz2Zkw7d7jtvph8wWMnWuhrM/Vt2xrzfN94C1mNWyYT5FezI4Rhi"], ["activation_digest", "$2a$10$NdSljuZk590ZbcL13157wefFrBOARHDH0RVwlhuvTBP34nfmzJ8jm"], ["activated", true], ["activated_at", 2016-10-25 03:46:48 UTC]]
+  [1m[35m (83.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-56@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Felicia Jones DDS"], ["email", "anh-56@gmail.com"], ["created_at", 2016-10-25 03:46:48 UTC], ["updated_at", 2016-10-25 03:46:48 UTC], ["password_digest", "$2a$10$MvBUNcuaYN0rDZvrGvJV/.n24OLrYaExQ4K.6rtRt4.KbgYbCugDC"], ["activation_digest", "$2a$10$37d94j8GZIZPaRKHbuQ4GOzrsiNbQY8QRLoEKKbXlHOHR7jkHVnN6"], ["activated", true], ["activated_at", 2016-10-25 03:46:48 UTC]]
+  [1m[35m (113.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-57@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Una Roberts"], ["email", "anh-57@gmail.com"], ["created_at", 2016-10-25 03:46:49 UTC], ["updated_at", 2016-10-25 03:46:49 UTC], ["password_digest", "$2a$10$FM.YDEdAt5PKeSPiKwm2v.2Y4nMltTFoXlFis3KmHng0.RBj5dc5i"], ["activation_digest", "$2a$10$GlMlSEH3UTURGG3dI3JT5edsPVxAEZzxo.c1hvJ72WH3HJzUhrVz2"], ["activated", true], ["activated_at", 2016-10-25 03:46:49 UTC]]
+  [1m[35m (104.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-58@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Vincenza Price III"], ["email", "anh-58@gmail.com"], ["created_at", 2016-10-25 03:46:49 UTC], ["updated_at", 2016-10-25 03:46:49 UTC], ["password_digest", "$2a$10$vdQh7bJTZX.RUMVqrDukoOrmwZPnSKtzeHWHSe1X/KW6F9X6lXx3e"], ["activation_digest", "$2a$10$jaxOLdzE1wsBFgu8McsHqu.CEolijBC/RfQRoSD1wHU8btNZ8uu.y"], ["activated", true], ["activated_at", 2016-10-25 03:46:49 UTC]]
+  [1m[35m (102.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-59@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Winifred Bernhard"], ["email", "anh-59@gmail.com"], ["created_at", 2016-10-25 03:46:49 UTC], ["updated_at", 2016-10-25 03:46:49 UTC], ["password_digest", "$2a$10$vVa0RrAWKssPYILyQHLmH.wNwCeWdpHVtyBZzs8E3Dn8ipaAIOw3m"], ["activation_digest", "$2a$10$8o/Cn4mJYICK5LDPGFict..TiB8p/nZ2PiAwb5gaqkUCI7l15d0nS"], ["activated", true], ["activated_at", 2016-10-25 03:46:49 UTC]]
+  [1m[35m (97.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-60@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Miss Theron Block"], ["email", "anh-60@gmail.com"], ["created_at", 2016-10-25 03:46:50 UTC], ["updated_at", 2016-10-25 03:46:50 UTC], ["password_digest", "$2a$10$IR72BsTOssWuTE8RF8k6i.Tt/wvXoUoS9CCNWHV/Fix3q8K11L2om"], ["activation_digest", "$2a$10$cNMqRZduCO3KedQuzzB/jeOJ8guSrD7c7wmlNUHBKZ04f/OQUaaCa"], ["activated", true], ["activated_at", 2016-10-25 03:46:49 UTC]]
+  [1m[35m (115.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-61@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Janiya Rutherford"], ["email", "anh-61@gmail.com"], ["created_at", 2016-10-25 03:46:50 UTC], ["updated_at", 2016-10-25 03:46:50 UTC], ["password_digest", "$2a$10$XSaQeO8bVz85Ed53RM4vBu/28vvtTmDRvZ8cJjkm3PHlngnJ4MK/O"], ["activation_digest", "$2a$10$eezjlXcR7zwcOyXxHi3ee.tnHSe5L7pjEi19lFZY2YKKOupSR3IXO"], ["activated", true], ["activated_at", 2016-10-25 03:46:50 UTC]]
+  [1m[35m (88.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-62@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Murphy Thompson"], ["email", "anh-62@gmail.com"], ["created_at", 2016-10-25 03:46:50 UTC], ["updated_at", 2016-10-25 03:46:50 UTC], ["password_digest", "$2a$10$wXaF8Yx9NOOQHUOoQit0GOQe4o0hLnlg2FzJK0Vk28Op1anBmQVNe"], ["activation_digest", "$2a$10$j8C79sa450gas2zPI3u/LOnLtkZfPsjUUP8XncGBHQBJluk3//ia."], ["activated", true], ["activated_at", 2016-10-25 03:46:50 UTC]]
+  [1m[35m (97.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-63@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Kadin Buckridge"], ["email", "anh-63@gmail.com"], ["created_at", 2016-10-25 03:46:50 UTC], ["updated_at", 2016-10-25 03:46:50 UTC], ["password_digest", "$2a$10$BP9ox/mVuzHGMd57pSgyhO.x1cdR13wxeAOOvEoX0qHERiJIYnxom"], ["activation_digest", "$2a$10$FfcFtOGBSfU3ZA2FU.wd5eYTusO8g5uMgwfSKsKNWq5VjqoD5YrTi"], ["activated", true], ["activated_at", 2016-10-25 03:46:50 UTC]]
+  [1m[35m (111.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-64@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Kaitlin Pfeffer"], ["email", "anh-64@gmail.com"], ["created_at", 2016-10-25 03:46:51 UTC], ["updated_at", 2016-10-25 03:46:51 UTC], ["password_digest", "$2a$10$cQdUUO6KEgFOnm64kWzpf.VLHQnAH8QTiHhol6x/u9iggfoDEl56S"], ["activation_digest", "$2a$10$Ymq3znONKHkHzHPssSnIuOTUFo.cC0.CRLK45T7QQdz/KQzyoU9/6"], ["activated", true], ["activated_at", 2016-10-25 03:46:51 UTC]]
+  [1m[35m (119.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-65@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Carissa Schaefer"], ["email", "anh-65@gmail.com"], ["created_at", 2016-10-25 03:46:51 UTC], ["updated_at", 2016-10-25 03:46:51 UTC], ["password_digest", "$2a$10$QINSsQtSmC/oBUOKO4IMX.Vibg20UbBLsgggY8gZXs67W7BZh1cS2"], ["activation_digest", "$2a$10$W7vJ4sdCx.zKa72u8pNzf.nwJC31i8fchoDsVuReSP7V8v9k8LYra"], ["activated", true], ["activated_at", 2016-10-25 03:46:51 UTC]]
+  [1m[35m (96.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-66@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Alia Lehner"], ["email", "anh-66@gmail.com"], ["created_at", 2016-10-25 03:46:51 UTC], ["updated_at", 2016-10-25 03:46:51 UTC], ["password_digest", "$2a$10$MgKiqrJ7tF/p/BxyQWna3upnWQcrhotOkS5MO76qTdWG9WJnyoo4O"], ["activation_digest", "$2a$10$OdBM0AA8EYY9b7Pjv3RHMO65CltmoQ94L.glHkEpvtOdDN0ZhOGfW"], ["activated", true], ["activated_at", 2016-10-25 03:46:51 UTC]]
+  [1m[35m (111.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-67@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Grady Prosacco"], ["email", "anh-67@gmail.com"], ["created_at", 2016-10-25 03:46:52 UTC], ["updated_at", 2016-10-25 03:46:52 UTC], ["password_digest", "$2a$10$udomRh4ZRGBdcKfvoyHLKO7YmEcHoo61sTN2a.XkOanSYjOvGcqRO"], ["activation_digest", "$2a$10$5LXkaZ3/o9s8KfThdtHV6OP3ZGxNS6IpfvdvmN2dSP5ljL3e9xuxy"], ["activated", true], ["activated_at", 2016-10-25 03:46:51 UTC]]
+  [1m[35m (92.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-68@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Eryn Johnston"], ["email", "anh-68@gmail.com"], ["created_at", 2016-10-25 03:46:52 UTC], ["updated_at", 2016-10-25 03:46:52 UTC], ["password_digest", "$2a$10$GBFzddVsFqcL4/Ee/BMAj.qOWZ/vrEm2vYJPdCbaOy9us.qG/GOqi"], ["activation_digest", "$2a$10$iHAr0keq0zXWaxTzF9yQB.HA7zTrX7AkRUjRNpHcJ4WMGHZXOUGh."], ["activated", true], ["activated_at", 2016-10-25 03:46:52 UTC]]
+  [1m[35m (114.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-69@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Candace Swift"], ["email", "anh-69@gmail.com"], ["created_at", 2016-10-25 03:46:52 UTC], ["updated_at", 2016-10-25 03:46:52 UTC], ["password_digest", "$2a$10$jjvx8RCufYSfzvw6/BjVD.BpK0ISRrxKE7v6PfnvUSdeDBAxShS5y"], ["activation_digest", "$2a$10$Om2OfRqO/yAf7XRU5.tjjOVNmGNl9cYM0jKXTxLSoq/VIB6mpWL9y"], ["activated", true], ["activated_at", 2016-10-25 03:46:52 UTC]]
+  [1m[35m (88.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-70@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Jaeden Fisher Jr."], ["email", "anh-70@gmail.com"], ["created_at", 2016-10-25 03:46:52 UTC], ["updated_at", 2016-10-25 03:46:52 UTC], ["password_digest", "$2a$10$npY2CBUV8s60Q39fs3sUJuHZD2288Rj5Xkiz3MgrPHdVh45qxQtSm"], ["activation_digest", "$2a$10$fBmCWSUVqAWnBpTymtyKgOgkrE.54IzM2Zg9EmR52bo3t99jTbtiS"], ["activated", true], ["activated_at", 2016-10-25 03:46:52 UTC]]
+  [1m[35m (95.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-71@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Enola Kutch"], ["email", "anh-71@gmail.com"], ["created_at", 2016-10-25 03:46:53 UTC], ["updated_at", 2016-10-25 03:46:53 UTC], ["password_digest", "$2a$10$1hQXRrU1J34yAKo5sJpod.ZsJ4p/AsmJfj.Xow2Qg/crbMdG/Av5a"], ["activation_digest", "$2a$10$ARhvPjCE8gzNDETRFz1qG..kVA217qJWv2dScFCuwPMev0y7WMYGu"], ["activated", true], ["activated_at", 2016-10-25 03:46:53 UTC]]
+  [1m[35m (101.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-72@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Akeem Pacocha Sr."], ["email", "anh-72@gmail.com"], ["created_at", 2016-10-25 03:46:53 UTC], ["updated_at", 2016-10-25 03:46:53 UTC], ["password_digest", "$2a$10$SzFyQlagvCOn9eBR5FQY3OiBeeVHQ9/dnUYM0qZ603Oekzs1sMX0q"], ["activation_digest", "$2a$10$SMrKj3XM7oM1.Hdzacec1OSxIP8k4iryK5bQ01TumQavcR9xHQOlK"], ["activated", true], ["activated_at", 2016-10-25 03:46:53 UTC]]
+  [1m[35m (123.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-73@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Aditya Bosco"], ["email", "anh-73@gmail.com"], ["created_at", 2016-10-25 03:46:53 UTC], ["updated_at", 2016-10-25 03:46:53 UTC], ["password_digest", "$2a$10$N4NEgcPDSZeF6cDJUP7JUeyTRnQnKVpUHjBycjL5rZv2WOkGQUsMe"], ["activation_digest", "$2a$10$ADzptbxWsoyUR45oYEnWeuNCUO8r.SnjXbq1.pSFZ1cgYUG.x9oBa"], ["activated", true], ["activated_at", 2016-10-25 03:46:53 UTC]]
+  [1m[35m (104.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-74@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Alvera Schmidt"], ["email", "anh-74@gmail.com"], ["created_at", 2016-10-25 03:46:54 UTC], ["updated_at", 2016-10-25 03:46:54 UTC], ["password_digest", "$2a$10$rrxcUYiAK3OwK4rnlW0XC.4d6U/33QIz04835u75UBSm4FtNkTSRm"], ["activation_digest", "$2a$10$L2LIw6cn1ucuv7X3Irtw0OagSDnTVTYDrHVtcjGjO23V.Zj5d2e/q"], ["activated", true], ["activated_at", 2016-10-25 03:46:53 UTC]]
+  [1m[35m (93.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-75@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Alessia Swift"], ["email", "anh-75@gmail.com"], ["created_at", 2016-10-25 03:46:54 UTC], ["updated_at", 2016-10-25 03:46:54 UTC], ["password_digest", "$2a$10$jQEvWnDtDQcbm2w16jWzi.2IlVkZW2XVzr4CfuOVHktP.alHP6OFS"], ["activation_digest", "$2a$10$wxq6R6pivWKC/KHV0wNTd.FKOYHmfLBMkt6Wd4S9zZHrr.veIU8iO"], ["activated", true], ["activated_at", 2016-10-25 03:46:54 UTC]]
+  [1m[35m (96.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-76@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Ms. Ramiro Dickinson"], ["email", "anh-76@gmail.com"], ["created_at", 2016-10-25 03:46:54 UTC], ["updated_at", 2016-10-25 03:46:54 UTC], ["password_digest", "$2a$10$ZThG2D1HvvyQpYSZ5snHmeXnzvmWQ8V5lK5MfcxhwfEBHQxTvtyom"], ["activation_digest", "$2a$10$wsL1LZ3H3ZHefJoRUFL0S.sC4XZdNHC2Ypn.g8wsMzjA1macxVFZG"], ["activated", true], ["activated_at", 2016-10-25 03:46:54 UTC]]
+  [1m[35m (114.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-77@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Carolyn Rowe I"], ["email", "anh-77@gmail.com"], ["created_at", 2016-10-25 03:46:54 UTC], ["updated_at", 2016-10-25 03:46:54 UTC], ["password_digest", "$2a$10$4tHG9I2uA8vRAVRvTXtn/.TssUStoyVJdkJH8B0X70SZouj/cFMeW"], ["activation_digest", "$2a$10$KeDP98zUyZFHdLpXnJUzU.byoEPJxlv.OE7dMqZptgpkFaujb2eMq"], ["activated", true], ["activated_at", 2016-10-25 03:46:54 UTC]]
+  [1m[35m (94.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-78@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Collin Hansen"], ["email", "anh-78@gmail.com"], ["created_at", 2016-10-25 03:46:55 UTC], ["updated_at", 2016-10-25 03:46:55 UTC], ["password_digest", "$2a$10$p3NbwrmQZIlZ1owbRSmXAOGbyrGkvgayih8nmz/Jwg1vwsVq3PVaC"], ["activation_digest", "$2a$10$8iYC.JY0TNGpWmpCT/Fo8eMIwymDO8qVtr.fHfEP.YpbsGYenvQty"], ["activated", true], ["activated_at", 2016-10-25 03:46:55 UTC]]
+  [1m[35m (96.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-79@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Lonnie Wolf"], ["email", "anh-79@gmail.com"], ["created_at", 2016-10-25 03:46:55 UTC], ["updated_at", 2016-10-25 03:46:55 UTC], ["password_digest", "$2a$10$aDnumpgMKIYaG6gK55w2beHDceP0h8CtUnDUCne1UWbdHYWtL29e."], ["activation_digest", "$2a$10$xzl4hejUyd/ETUDuABm0COcz8154wfc1a76QZ/cKeOfHUam1iJ6vi"], ["activated", true], ["activated_at", 2016-10-25 03:46:55 UTC]]
+  [1m[35m (95.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-80@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Brenna Hahn"], ["email", "anh-80@gmail.com"], ["created_at", 2016-10-25 03:46:55 UTC], ["updated_at", 2016-10-25 03:46:55 UTC], ["password_digest", "$2a$10$Z0KDHMJzM7LBDM84E2g7L.GtYZcdaLMxWTeOgYxpWIYIGJ1Z4.vRq"], ["activation_digest", "$2a$10$XB/OsgmZgReK0UbU1XQqBevFGrRO4MCoRPYq0sHA71nmdOigJNj1e"], ["activated", true], ["activated_at", 2016-10-25 03:46:55 UTC]]
+  [1m[35m (102.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-81@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Linwood Goldner IV"], ["email", "anh-81@gmail.com"], ["created_at", 2016-10-25 03:46:56 UTC], ["updated_at", 2016-10-25 03:46:56 UTC], ["password_digest", "$2a$10$8JL8Dc4YpEKtrYA/5BseK.olbAb3YEdxaGencbXz5J3qTewn8Sov."], ["activation_digest", "$2a$10$txUISpZuct.p8Mf7WK9e5uZUay/AsL8Bd5Cu4ZHSX07Qhxv2std2y"], ["activated", true], ["activated_at", 2016-10-25 03:46:55 UTC]]
+  [1m[35m (88.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-82@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Rebeca McGlynn"], ["email", "anh-82@gmail.com"], ["created_at", 2016-10-25 03:46:56 UTC], ["updated_at", 2016-10-25 03:46:56 UTC], ["password_digest", "$2a$10$sW5BznUvyXgpWeGx80F8YubLPeSoiIhvf7Q5.3AsQmoyCx5HxYS5q"], ["activation_digest", "$2a$10$0WsCyId6ilvO2216q2QSv.XDaSGnbOYZHn7R2xWoJr4EGOKNeRqV6"], ["activated", true], ["activated_at", 2016-10-25 03:46:56 UTC]]
+  [1m[35m (134.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-83@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Clifton Mueller"], ["email", "anh-83@gmail.com"], ["created_at", 2016-10-25 03:46:56 UTC], ["updated_at", 2016-10-25 03:46:56 UTC], ["password_digest", "$2a$10$tR1zmEN.BjRlSLICKVl8EuSlITZsipoQZa8Od2eC4YoR1k/OBzxyu"], ["activation_digest", "$2a$10$5HJ.EcLbg8KTonbD.A/k3ugp6EYRrMzSTI.CuQwyCdPtzvnF5k4RK"], ["activated", true], ["activated_at", 2016-10-25 03:46:56 UTC]]
+  [1m[35m (99.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-84@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Cordell Zieme"], ["email", "anh-84@gmail.com"], ["created_at", 2016-10-25 03:46:56 UTC], ["updated_at", 2016-10-25 03:46:56 UTC], ["password_digest", "$2a$10$8zi/Rkdl/Pji4YLCK3Mr4Oie00QwOjAqI7gZL8SKSe59I54a/qGF2"], ["activation_digest", "$2a$10$K/ybZZxewolaMcOfth66veeMF.Bb.aERDxp7i1fA684InBcKrIYdK"], ["activated", true], ["activated_at", 2016-10-25 03:46:56 UTC]]
+  [1m[35m (114.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-85@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Mrs. Jed Mitchell"], ["email", "anh-85@gmail.com"], ["created_at", 2016-10-25 03:46:57 UTC], ["updated_at", 2016-10-25 03:46:57 UTC], ["password_digest", "$2a$10$LATyjS2sXu6xxAePwDPQ9.wD0bJHIESyEtvIUiEFkZznxBaXWgJnS"], ["activation_digest", "$2a$10$R/500RrIe0HijeHH.LMGj.8avDzIIx8A7oBSbKefNhPj7bMKo0uiC"], ["activated", true], ["activated_at", 2016-10-25 03:46:57 UTC]]
+  [1m[35m (103.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-86@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Eldora Rogahn"], ["email", "anh-86@gmail.com"], ["created_at", 2016-10-25 03:46:57 UTC], ["updated_at", 2016-10-25 03:46:57 UTC], ["password_digest", "$2a$10$78frxJ0UvrFiRLq/kck3degh2VIagoin2H6FWrsQXMyhx7aSfYal."], ["activation_digest", "$2a$10$M83T/QOoSQSaMO1TZjhG8eODkpfM13ak0ZSxTUqTXbpz2g5WW41zW"], ["activated", true], ["activated_at", 2016-10-25 03:46:57 UTC]]
+  [1m[35m (92.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-87@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "June O'Reilly"], ["email", "anh-87@gmail.com"], ["created_at", 2016-10-25 03:46:57 UTC], ["updated_at", 2016-10-25 03:46:57 UTC], ["password_digest", "$2a$10$ErwTrNCPX/DPcjjm.WSMA./4f0/lEZ3U1TGTZ3q0Zpq0WxVbgIt6q"], ["activation_digest", "$2a$10$KffYYQETIO36u9F8fAcWPeseI4MWM4nZ9Atxg6qEMWQUSFnop2s8O"], ["activated", true], ["activated_at", 2016-10-25 03:46:57 UTC]]
+  [1m[35m (96.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-88@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Belle Murray"], ["email", "anh-88@gmail.com"], ["created_at", 2016-10-25 03:46:58 UTC], ["updated_at", 2016-10-25 03:46:58 UTC], ["password_digest", "$2a$10$z1k6VwpXlyPG1BUhqdLnP.BnjbPy1Ifm1nTGIjmSPkd7lWGuwiMVm"], ["activation_digest", "$2a$10$.ykPN177CDBZZLhV7ECrderLp29I7nfxrM/2QdyyeHnT.eQIYDwGe"], ["activated", true], ["activated_at", 2016-10-25 03:46:58 UTC]]
+  [1m[35m (120.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-89@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Easter Luettgen Sr."], ["email", "anh-89@gmail.com"], ["created_at", 2016-10-25 03:46:58 UTC], ["updated_at", 2016-10-25 03:46:58 UTC], ["password_digest", "$2a$10$M6lsL36dCbSIQmwCYeVWuubdbPHlpAe3KrLsGBxJOZKhPfHsJrq2a"], ["activation_digest", "$2a$10$tnKc/Czi6zFyXhZGy9CTceNz.6vOyysD4ty4LxE/J8eQ5qneW9Tri"], ["activated", true], ["activated_at", 2016-10-25 03:46:58 UTC]]
+  [1m[35m (104.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-90@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Ilene Paucek"], ["email", "anh-90@gmail.com"], ["created_at", 2016-10-25 03:46:58 UTC], ["updated_at", 2016-10-25 03:46:58 UTC], ["password_digest", "$2a$10$OAa97.7bBWcwXOWCW6vG4ec6yJhcHaFp904JaPrJGW5hoGoV.PL3e"], ["activation_digest", "$2a$10$iITIiw.2Wlwt1Xilx5Nq/uE7r.HqzbkWQQlAOt/zuqbyVnFMjzsgq"], ["activated", true], ["activated_at", 2016-10-25 03:46:58 UTC]]
+  [1m[35m (101.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-91@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Nicolas Sawayn"], ["email", "anh-91@gmail.com"], ["created_at", 2016-10-25 03:46:58 UTC], ["updated_at", 2016-10-25 03:46:58 UTC], ["password_digest", "$2a$10$oKL/LaJYQhjkWhRPkCd/Y.I3GqqtYhmfCcRfKYzwDchJYdquLK2gW"], ["activation_digest", "$2a$10$Lcg0oPbSkdVSzIgkZa6gFuI7nZbJCjqSN.e/127WQ4RAXJTmtauAG"], ["activated", true], ["activated_at", 2016-10-25 03:46:58 UTC]]
+  [1m[35m (96.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-92@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Miss Rhoda Kiehn"], ["email", "anh-92@gmail.com"], ["created_at", 2016-10-25 03:46:59 UTC], ["updated_at", 2016-10-25 03:46:59 UTC], ["password_digest", "$2a$10$7i6.xFMI1pQN3Yn0fJVpc.eqiCu6WUAMp5yAJcGGrY6VK.IgTY4Ky"], ["activation_digest", "$2a$10$Tw5XI7tslqsUVI2veDkvFu7xAAUzzhi3T9ccCBIzW2c6xOOQ6wBz6"], ["activated", true], ["activated_at", 2016-10-25 03:46:59 UTC]]
+  [1m[35m (122.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-93@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Ms. Ervin Bartoletti"], ["email", "anh-93@gmail.com"], ["created_at", 2016-10-25 03:46:59 UTC], ["updated_at", 2016-10-25 03:46:59 UTC], ["password_digest", "$2a$10$.zDB.Rz773rJqTv/NWAp8ezQSewmgDJGxDY4yAix458vZcKVgsax."], ["activation_digest", "$2a$10$EwvlaEDjbwsK6Lh641Z7juKb2q0hqr97ZW13hm.5Cwxugxxxdthr."], ["activated", true], ["activated_at", 2016-10-25 03:46:59 UTC]]
+  [1m[35m (86.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-94@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Virgil Osinski"], ["email", "anh-94@gmail.com"], ["created_at", 2016-10-25 03:46:59 UTC], ["updated_at", 2016-10-25 03:46:59 UTC], ["password_digest", "$2a$10$UPno2oWNTdtz6QKClSz2I.os34uGOyG7KD1Wu84xhThV4AISQBaG."], ["activation_digest", "$2a$10$yCf3.ZP8VD9FOcXUgDNYQ.Bdzx9admsNOxUQ6My4cdinMMpFSOWKi"], ["activated", true], ["activated_at", 2016-10-25 03:46:59 UTC]]
+  [1m[35m (95.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-95@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Winnifred Ruecker"], ["email", "anh-95@gmail.com"], ["created_at", 2016-10-25 03:47:00 UTC], ["updated_at", 2016-10-25 03:47:00 UTC], ["password_digest", "$2a$10$E2rQdRVb44z8a7cL9EvtRedKPg.aGJx/pO.ytAwEH3xsPIed73o0K"], ["activation_digest", "$2a$10$yc5no9L68gsiHgpesUjhEOnY3POtb8ceS9drSziG1pmn.tpFiOZvu"], ["activated", true], ["activated_at", 2016-10-25 03:47:00 UTC]]
+  [1m[35m (101.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-96@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Mrs. Jessika Swaniawski"], ["email", "anh-96@gmail.com"], ["created_at", 2016-10-25 03:47:00 UTC], ["updated_at", 2016-10-25 03:47:00 UTC], ["password_digest", "$2a$10$/EfXdTJuWV6bknh4jLJoGu.Yg6TNLM3X9kMS06GzBUA0RdZAVbZyK"], ["activation_digest", "$2a$10$t8/ZwdGt.kBMB/oYM1za9.TCXUTYaXQIkeQxdW0A1yVegD3Nv4QTO"], ["activated", true], ["activated_at", 2016-10-25 03:47:00 UTC]]
+  [1m[35m (109.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-97@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Kayley Runolfsdottir"], ["email", "anh-97@gmail.com"], ["created_at", 2016-10-25 03:47:00 UTC], ["updated_at", 2016-10-25 03:47:00 UTC], ["password_digest", "$2a$10$RyDGeX0ZGlU29a6kWGwcPeRIeFoPxyUPPMJvZwETdBrAnUDQrKztm"], ["activation_digest", "$2a$10$Dc/LJLPrwPRNjChKJHpkZ.uxqG0CwFKXqyhwpfsyEKO9U8lUxh0SS"], ["activated", true], ["activated_at", 2016-10-25 03:47:00 UTC]]
+  [1m[35m (92.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-98@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Darion Lynch"], ["email", "anh-98@gmail.com"], ["created_at", 2016-10-25 03:47:01 UTC], ["updated_at", 2016-10-25 03:47:01 UTC], ["password_digest", "$2a$10$ic440IGd29vN9wb/XlRMfur4QHkAqJ22xkB030TJmAeg6KjRgObb."], ["activation_digest", "$2a$10$gik89APlvXDfIt/K9ipKGev7gcWy8wo5b5bPyaGn4GSCB3FvKRhBy"], ["activated", true], ["activated_at", 2016-10-25 03:47:00 UTC]]
+  [1m[35m (98.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anh-99@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Miss Pattie Schowalter"], ["email", "anh-99@gmail.com"], ["created_at", 2016-10-25 03:47:01 UTC], ["updated_at", 2016-10-25 03:47:01 UTC], ["password_digest", "$2a$10$VPKBPfSZZtLDvqPmF73i8Os.mRNxQNGB6X2bP5Zm4pToUOGfYx/vS"], ["activation_digest", "$2a$10$y4rEU4PH69qfezoG4U.BM.G4pL/X1tMokw0SB5yoIFivxfnPKbKSK"], ["activated", true], ["activated_at", 2016-10-25 03:47:01 UTC]]
+  [1m[35m (103.3ms)[0m  [1m[36mcommit transaction[0m
+Started POST "/users" for 127.0.0.1 at 2016-10-25 11:27:12 +0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+ActionController::RoutingError (No route matches [POST] "/users"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered collection of /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [15 times] (4.7ms)
+  Rendered /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (7.8ms)
+  Rendering /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (9.6ms)
+  Rendered /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (48.3ms)
+Started GET "/" for 127.0.0.1 at 2016-10-25 12:23:55 +0700
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (496.2ms)
+  Rendered layouts/_rails_default.html.erb (55.4ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (22.1ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 581ms (Views: 578.8ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2016-10-25 12:24:01 +0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"/seBLechxVkeV5Zosu7tw7S90v9irggLMh/kwIQKKxMjqwmJO9fDgDlNSRKMrH0We/Z5v9e2jN+22vnEB61RSQ=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) AND ("users"."id" != ?) LIMIT ?[0m  [["email", "anh@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 19ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-25 12:24:01 +0700
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_rails_default.html.erb (49.2ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (4.7ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 63ms (Views: 62.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2016-10-25 12:24:04 +0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (1.1ms)
+  Rendered users/_form.html.erb (15.1ms)
+  Rendered users/new.html.erb within layouts/application (27.8ms)
+  Rendered layouts/_rails_default.html.erb (47.2ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 86ms (Views: 84.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-10-25 12:28:10 +0700
+  
+ActionController::RoutingError (No route matches [POST] "/users"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered collection of /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [15 times] (9.0ms)
+  Rendered /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.6ms)
+  Rendering /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (41.9ms)
+Started POST "/users" for 127.0.0.1 at 2016-10-25 12:52:17 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dgiAmUy7pLpgSmESMB/uQlR2F7Qf4O9Sm0IlJR6W4cTJtVI2WKmyVo7xlYz7Lu0TOsb0s0BP3te5VQl9RWi5eg==", "user"=>{"name"=>"Hanh", "email"=>"hanh@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "hanh@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Hanh"], ["email", "hanh@gmail.com"], ["created_at", 2016-10-25 05:52:17 UTC], ["updated_at", 2016-10-25 05:52:17 UTC], ["password_digest", "$2a$10$uurnl7FfnO3xALRVvvEIOuT1b3QHT6LlDc0CBbKA9X/IDWg2sA3LK"], ["activation_digest", "$2a$10$BJ.inKNg0Y3np2r42jFHBeBwNiqaFj2jOhk8h7IBPFbymcTaqd5z6"]]
+  [1m[35m (158.6ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 641ms (ActiveRecord: 160.3ms)
+
+
+  
+NoMethodError (undefined method `deliver_now' for #<User:0x007f46d185c7e8>):
+  
+app/controllers/users_controller.rb:26:in `create'
+  Rendering /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.0ms)
+  Rendering /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendering /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (24.5ms)
+Started POST "/users" for 127.0.0.1 at 2016-10-25 12:54:33 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dgiAmUy7pLpgSmESMB/uQlR2F7Qf4O9Sm0IlJR6W4cTJtVI2WKmyVo7xlYz7Lu0TOsb0s0BP3te5VQl9RWi5eg==", "user"=>{"name"=>"Hanh", "email"=>"hanh@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "hanh@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (1.2ms)
+  Rendered users/_form.html.erb (4.3ms)
+  Rendered users/new.html.erb within layouts/application (5.3ms)
+  Rendered layouts/_rails_default.html.erb (28.7ms)
+  Rendered layouts/_shim.html.erb (0.8ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 147ms (Views: 42.0ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-10-25 12:55:00 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yZ6ZMtoAoM28XmaeAO5BRkwtL1kE0kBuYIaghh/ejHQU8hGWBvamFJtEueQ+rNGTg2aEGbHKxLrkQ72CnHn2Lg==", "user"=>{"name"=>"Hang", "email"=>"hang@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "hang@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Hang"], ["email", "hang@gmail.com"], ["created_at", 2016-10-25 05:55:00 UTC], ["updated_at", 2016-10-25 05:55:00 UTC], ["password_digest", "$2a$10$NXBOsT4VCo4OGNlp31YrJu58RkXUD2mt6SISWqfJWUtIIx4INuIXe"], ["activation_digest", "$2a$10$xakDUVo3hi3sRRGoVuHmFOTKrWlWwE2sQXnHQVDWBmUNaJHHjFco."]]
+  [1m[35m (75.0ms)[0m  [1m[36mcommit transaction[0m
+  Rendering user_mailer/account_activation.html.erb within layouts/mailer
+  Rendered user_mailer/account_activation.html.erb within layouts/mailer (1.4ms)
+  Rendering user_mailer/account_activation.text.erb within layouts/mailer
+  Rendered user_mailer/account_activation.text.erb within layouts/mailer (0.8ms)
+UserMailer#account_activation: processed outbound mail in 143.8ms
+Sent mail to hang@gmail.com (22.4ms)
+Date: Tue, 25 Oct 2016 12:55:00 +0700
+From: noreply@example.com
+To: hang@gmail.com
+Message-ID: <580ef3b4d1c01_1c6b1843bbc61424@kieuanh-Lenovo-ideapad-310-14ISK.mail>
+Subject: Account activation
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_580ef3b4d08d0_1c6b1843bbc61362";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_580ef3b4d08d0_1c6b1843bbc61362
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Hi Hang,
+
+Welcome to the Sample App! Click on the link below to activate your account:
+
+https://localhost:3000/account_activations/oMEoYv9vYquEMvQhFXt7oA/edit?email=hang%40gmail.com
+
+
+----==_mimepart_580ef3b4d08d0_1c6b1843bbc61362
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Sample App</h1>
+
+<p>Hi Hang,</p>
+
+<p>
+Welcome to the Sample App! Click on the link below to activate your account:
+</p>
+
+<a href="https://localhost:3000/account_activations/oMEoYv9vYquEMvQhFXt7oA/edit?email=hang%40gmail.com">Activate</a>
+
+  </body>
+</html>
+
+----==_mimepart_580ef3b4d08d0_1c6b1843bbc61362--
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 424ms (ActiveRecord: 75.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-25 12:55:00 +0700
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (3.3ms)
+  Rendered layouts/_rails_default.html.erb (37.3ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 48ms (Views: 47.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/account_activations/oMEoYv9vYquEMvQhFXt7oA/edit?email=hang%40gmail.com" for 127.0.0.1 at 2016-10-25 12:55:34 +0700
+  
+AbstractController::ActionNotFound (The action 'edit' could not be found for AccountActivationsController):
+  
+actionpack (5.0.0.1) lib/abstract_controller/base.rb:121:in `process'
+actionview (5.0.0.1) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.0.0.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.0.1) lib/action_controller/metal.rb:262:in `dispatch'
+actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:725:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.0.1) lib/active_record/migration.rb:552:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout
+  Rendered /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (2.0ms)
+Started GET "/" for 127.0.0.1 at 2016-10-25 13:19:46 +0700
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_rails_default.html.erb (39.1ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 53ms (Views: 51.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2016-10-25 13:31:23 +0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.8ms)
+  Rendered users/_form.html.erb (7.9ms)
+  Rendered users/new.html.erb within layouts/application (9.0ms)
+  Rendered layouts/_rails_default.html.erb (37.6ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 69ms (Views: 53.3ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-10-25 13:31:40 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+ythYs7uArmDfyyK2qYxcf+2GXmpZgNnEJFnGPhBlYdElrPN2vwUVW3E2BQRlzIgkQb6fvbJMuIyhktAo7/NOQ==", "user"=>{"name"=>"Hoa", "email"=>"hoa@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "hoa@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Hoa"], ["email", "hoa@gmail.com"], ["created_at", 2016-10-25 06:31:40 UTC], ["updated_at", 2016-10-25 06:31:40 UTC], ["password_digest", "$2a$10$XO.eGtzU699/bWfoz5yrDuw2wgR4H3tNvPmVpPn5zAu88J5bb9TzS"], ["activation_digest", "$2a$10$TnOYQAtqd0ttpq7iCI5DUewe1hZhLaY2VHsJVP5MyJ01WFx/z9gSG"]]
+  [1m[35m (131.3ms)[0m  [1m[36mcommit transaction[0m
+  Rendering user_mailer/account_activation.html.erb within layouts/mailer
+  Rendered user_mailer/account_activation.html.erb within layouts/mailer (1.0ms)
+  Rendering user_mailer/account_activation.text.erb within layouts/mailer
+  Rendered user_mailer/account_activation.text.erb within layouts/mailer (0.8ms)
+UserMailer#account_activation: processed outbound mail in 18.9ms
+Sent mail to hoa@gmail.com (3.5ms)
+Date: Tue, 25 Oct 2016 13:31:40 +0700
+From: noreply@example.com
+To: hoa@gmail.com
+Message-ID: <580efc4c6e29e_1c6b1843bbc616a3@kieuanh-Lenovo-ideapad-310-14ISK.mail>
+Subject: Account activation
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_580efc4c6d859_1c6b1843bbc615d9";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_580efc4c6d859_1c6b1843bbc615d9
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Hi Hoa,
+
+Welcome to the Sample App! Click on the link below to activate your account:
+
+https://localhost:3000/account_activations/iOnYOp9sSdK8nT4QT4g-xQ/edit?email=hoa%40gmail.com
+
+
+----==_mimepart_580efc4c6d859_1c6b1843bbc615d9
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Sample App</h1>
+
+<p>Hi Hoa,</p>
+
+<p>
+Welcome to the Sample App! Click on the link below to activate your account:
+</p>
+
+<a href="https://localhost:3000/account_activations/iOnYOp9sSdK8nT4QT4g-xQ/edit?email=hoa%40gmail.com">Activate</a>
+
+  </body>
+</html>
+
+----==_mimepart_580efc4c6d859_1c6b1843bbc615d9--
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 348ms (ActiveRecord: 131.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-25 13:31:40 +0700
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_rails_default.html.erb (32.6ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 43ms (Views: 40.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/account_activations/iOnYOp9sSdK8nT4QT4g-xQ/edit?email=hoa%40gmail.com" for 127.0.0.1 at 2016-10-25 13:32:18 +0700
+  
+SyntaxError (/home/kieuanh/workspace/Sample-app/app/controllers/account_activations_controller.rb:5: syntax error, unexpected tSYMBEG, expecting keyword_then or ';' or '\n'
+...vated? && user.authenticated? :activation, params[:id]
+...                               ^
+/home/kieuanh/workspace/Sample-app/app/controllers/account_activations_controller.rb:16: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/account_activations_controller.rb:5: syntax error, unexpected tSYMBEG, expecting keyword_then or ';' or '\n'
+app/controllers/account_activations_controller.rb:16: syntax error, unexpected keyword_end, expecting end-of-input
+  Rendering /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.8ms)
+  Rendering /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendering /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (23.5ms)
+Started GET "/account_activations/iOnYOp9sSdK8nT4QT4g-xQ/edit?email=hoa%40gmail.com" for 127.0.0.1 at 2016-10-25 13:32:35 +0700
+Processing by AccountActivationsController#edit as HTML
+  Parameters: {"email"=>"hoa@gmail.com", "id"=>"iOnYOp9sSdK8nT4QT4g-xQ"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "hoa@gmail.com"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.9ms)
+
+
+  
+NameError (undefined local variable or method `token' for #<User:0x007f46c874cff0>
+Did you mean?  to_key):
+  
+app/models/user.rb:34:in `authenticated?'
+app/controllers/account_activations_controller.rb:5:in `edit'
+  Rendering /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.1ms)
+  Rendering /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendering /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (22.4ms)
+Started GET "/account_activations/iOnYOp9sSdK8nT4QT4g-xQ/edit?email=hoa%40gmail.com" for 127.0.0.1 at 2016-10-25 13:35:44 +0700
+Processing by AccountActivationsController#edit as HTML
+  Parameters: {"email"=>"hoa@gmail.com", "id"=>"iOnYOp9sSdK8nT4QT4g-xQ"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "hoa@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) AND ("users"."id" != ?) LIMIT ?[0m  [["email", "hoa@gmail.com"], ["id", 103], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "users" SET "activated" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["activated", true], ["updated_at", 2016-10-25 06:35:44 UTC], ["id", 103]]
+  [1m[35m (91.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) AND ("users"."id" != ?) LIMIT ?[0m  [["email", "hoa@gmail.com"], ["id", 103], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "activated_at" = ? WHERE "users"."id" = ?[0m  [["updated_at", 2016-10-25 06:35:44 UTC], ["activated_at", 2016-10-25 06:35:44 UTC], ["id", 103]]
+  [1m[35m (84.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/103
+Completed 302 Found in 303ms (ActiveRecord: 179.3ms)
+
+
+Started GET "/users/103" for 127.0.0.1 at 2016-10-25 13:35:44 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"103"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 103], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_rails_default.html.erb (38.4ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 103], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.5ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 50ms (Views: 48.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/103" for 127.0.0.1 at 2016-10-25 13:40:48 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"103"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 103], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_rails_default.html.erb (32.7ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 103], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (1.6ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 54ms (Views: 40.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/103" for 127.0.0.1 at 2016-10-25 15:36:52 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"103"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/kieuanh/workspace/Sample-app/app/models/user.rb:42: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+    update_attributes activated: true activated_at: Time.zone.now
+                                                  ^):
+  
+app/models/user.rb:42: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+app/controllers/users_controller.rb:76:in `find_user'
+  Rendering /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.1ms)
+  Rendering /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendering /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (22.3ms)
+Started GET "/users/103" for 127.0.0.1 at 2016-10-25 15:37:16 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"103"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/kieuanh/workspace/Sample-app/app/models/user.rb:42: syntax error, unexpected tIDENTIFIER, expecting ')'
+    update_attributes(activated: true activated_at: Time.zone.now)
+                                                  ^
+/home/kieuanh/workspace/Sample-app/app/models/user.rb:42: syntax error, unexpected ')', expecting keyword_end
+/home/kieuanh/workspace/Sample-app/app/models/user.rb:60: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/models/user.rb:42: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/models/user.rb:42: syntax error, unexpected ')', expecting keyword_end
+app/models/user.rb:60: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/users_controller.rb:76:in `find_user'
+  Rendering /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.8ms)
+  Rendering /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendering /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (21.9ms)
+Started GET "/users/103" for 127.0.0.1 at 2016-10-25 15:38:17 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"103"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 103], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_rails_default.html.erb (87.0ms)
+  Rendered layouts/_shim.html.erb (1.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 103], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (5.6ms)
+  Rendered layouts/_footer.html.erb (1.2ms)
+Completed 200 OK in 117ms (Views: 104.5ms | ActiveRecord: 1.1ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2016-10-25 15:38:22 +0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"tiqBdWAlmqnfhDRDGRPqrnMK950mx/Dr/oA3zPdBDstrRgnRvNOccPie6zknUXp7vEFc3ZPfdD96RSrIdOZ0kQ=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 103], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) AND ("users"."id" != ?) LIMIT ?[0m  [["email", "hoa@gmail.com"], ["id", 103], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-25 15:38:22 +0700
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_rails_default.html.erb (33.8ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 43ms (Views: 41.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-25 15:38:24 +0700
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_rails_default.html.erb (37.3ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 47ms (Views: 46.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/help" for 127.0.0.1 at 2016-10-25 15:38:25 +0700
+Processing by StaticPagesController#help as HTML
+  Rendering static_pages/help.html.erb within layouts/application
+  Rendered static_pages/help.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_rails_default.html.erb (48.0ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 56ms (Views: 54.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-25 15:38:27 +0700
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_rails_default.html.erb (34.6ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 45ms (Views: 43.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-10-25 15:39:12 +0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.3ms)
+  Rendered layouts/_rails_default.html.erb (38.1ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.7ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 55ms (Views: 52.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-25 15:39:14 +0700
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_rails_default.html.erb (48.4ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 58ms (Views: 57.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2016-10-25 15:39:15 +0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.6ms)
+  Rendered users/_form.html.erb (4.8ms)
+  Rendered users/new.html.erb within layouts/application (6.1ms)
+  Rendered layouts/_rails_default.html.erb (47.1ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (2.0ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 64ms (Views: 62.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-10-25 15:39:41 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"K7836on0ERkmZIK/aHUCzlFlVEnnuXg5cEGoyieAPfuUAuVFneYH9cjfdiGjRAGfP9W3TrgWSbxSVoSSfH5lRQ==", "user"=>{"name"=>"Kieu Thi Anh", "email"=>"anhkt1603@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anhkt1603@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Kieu Thi Anh"], ["email", "anhkt1603@gmail.com"], ["created_at", 2016-10-25 08:39:41 UTC], ["updated_at", 2016-10-25 08:39:41 UTC], ["password_digest", "$2a$10$MEfhl7VKJz8yU1tQ21ugyelKDi/QbiyxqHm.UGEpBl.Ty7we0XHJK"], ["activation_digest", "$2a$10$9Ycqrz0zyV1WNzG3GZdhde.Wviyd5F6LyeCgatoGxhovPoIBRd3vi"]]
+  [1m[35m (75.0ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 286ms (ActiveRecord: 76.8ms)
+
+
+  
+NoMethodError (undefined method `deliver_now' for #<User:0x007f46d162f8d0>):
+  
+app/models/user.rb:46:in `send_activation_email'
+app/controllers/users_controller.rb:26:in `create'
+  Rendering /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.0ms)
+  Rendering /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendering /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/kieuanh/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (22.4ms)
+Started POST "/users" for 127.0.0.1 at 2016-10-25 15:40:07 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"K7836on0ERkmZIK/aHUCzlFlVEnnuXg5cEGoyieAPfuUAuVFneYH9cjfdiGjRAGfP9W3TrgWSbxSVoSSfH5lRQ==", "user"=>{"name"=>"Kieu Thi Anh", "email"=>"anhkt1603@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anhkt1603@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.6ms)
+  Rendered users/_form.html.erb (3.1ms)
+  Rendered users/new.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_rails_default.html.erb (28.0ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 139ms (Views: 37.9ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-10-25 15:40:29 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CJ3FC6rLNXhKvA3M5tUSd/etW3UDRA/FXCxTl+AyjcbV8U2vdj0zoW2m0rbYl4KiOObwNbZcixHY6U6TY5X3nA==", "user"=>{"name"=>"Kieu Thi Anh", "email"=>"anhkt1603@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "anhkt1603@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.6ms)
+  Rendered users/_form.html.erb (3.1ms)
+  Rendered users/new.html.erb within layouts/application (4.0ms)
+  Rendered layouts/_rails_default.html.erb (32.1ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 130ms (Views: 42.7ms | ActiveRecord: 0.5ms)
+
+
