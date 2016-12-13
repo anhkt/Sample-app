@@ -1,4 +1,4 @@
-ActiveRecord::Schema.define(version: 20161024161931) do
+ActiveRecord::Schema.define(version: 20161024063501) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
